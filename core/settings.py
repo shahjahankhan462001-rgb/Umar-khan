@@ -9,10 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-sdvv-)b%@$&2)eebmfj-6t1p1caljr1c^77jan^o=_14ddj-=-'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
 
 # Applications
 INSTALLED_APPS = [
@@ -113,11 +112,17 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# ==========================
-# 🌐 CORS SETTINGS (React)
+
 # ==========================
 CORS_ALLOW_ALL_ORIGINS = True
 
+
+# ==========================
+# 🔒 CSRF SETTINGS
+# ==========================
+CSRF_TRUSTED_ORIGINS = [
+    "https://samiya-khan.vercel.app"
+]
 
 # ==========================
 # 📩 EMAIL CONFIG (IMPORTANT)
